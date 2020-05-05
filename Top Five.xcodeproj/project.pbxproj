@@ -3,27 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C96F628D399DF1C7CD25E43 /* Pods_Top_Five.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783E0E7009AA91F8F4568B11 /* Pods_Top_Five.framework */; };
 		80C1B1962460C3F3000ADDB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1952460C3F3000ADDB0 /* AppDelegate.swift */; };
 		80C1B1982460C3F3000ADDB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1972460C3F3000ADDB0 /* SceneDelegate.swift */; };
-		80C1B19A2460C3F3000ADDB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1992460C3F3000ADDB0 /* ViewController.swift */; };
+		80C1B19A2460C3F3000ADDB0 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1992460C3F3000ADDB0 /* OverviewViewController.swift */; };
 		80C1B19D2460C3F3000ADDB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C1B19B2460C3F3000ADDB0 /* Main.storyboard */; };
 		80C1B19F2460C3F8000ADDB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C1B19E2460C3F8000ADDB0 /* Assets.xcassets */; };
 		80C1B1A22460C3F8000ADDB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C1B1A02460C3F8000ADDB0 /* LaunchScreen.storyboard */; };
+		80C1B1B72460F619000ADDB0 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1B52460F619000ADDB0 /* OverviewCell.swift */; };
+		80C1B1B82460F619000ADDB0 /* OverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C1B1B62460F619000ADDB0 /* OverviewCell.xib */; };
+		80EB28442461DA1C006E54BD /* TopFiveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB28432461DA1C006E54BD /* TopFiveList.swift */; };
+		80EB28462461DA37006E54BD /* ListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB28452461DA37006E54BD /* ListItems.swift */; };
+		80EB28492461ED9E006E54BD /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80EB28482461ED9E006E54BD /* Righteous-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56F3DA81DE6A55C2A0B0AF41 /* Pods-Top Five.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top Five.release.xcconfig"; path = "Target Support Files/Pods-Top Five/Pods-Top Five.release.xcconfig"; sourceTree = "<group>"; };
+		5D27AA8D67FB3965ABFA161C /* Pods-Top Five.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top Five.debug.xcconfig"; path = "Target Support Files/Pods-Top Five/Pods-Top Five.debug.xcconfig"; sourceTree = "<group>"; };
+		783E0E7009AA91F8F4568B11 /* Pods_Top_Five.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Top_Five.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C1B1922460C3F3000ADDB0 /* Top Five.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Five.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C1B1952460C3F3000ADDB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C1B1972460C3F3000ADDB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80C1B1992460C3F3000ADDB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80C1B1992460C3F3000ADDB0 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		80C1B19C2460C3F3000ADDB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80C1B19E2460C3F8000ADDB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C1B1A12460C3F8000ADDB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80C1B1A32460C3F8000ADDB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80C1B1B52460F619000ADDB0 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
+		80C1B1B62460F619000ADDB0 /* OverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCell.xib; sourceTree = "<group>"; };
+		80EB28432461DA1C006E54BD /* TopFiveList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFiveList.swift; sourceTree = "<group>"; };
+		80EB28452461DA37006E54BD /* ListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItems.swift; sourceTree = "<group>"; };
+		80EB28482461ED9E006E54BD /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C96F628D399DF1C7CD25E43 /* Pods_Top_Five.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FFEA34A64460E010331B85B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D27AA8D67FB3965ABFA161C /* Pods-Top Five.debug.xcconfig */,
+				56F3DA81DE6A55C2A0B0AF41 /* Pods-Top Five.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F74D3393E6DEF01BF7CE548 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				783E0E7009AA91F8F4568B11 /* Pods_Top_Five.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		80C1B1892460C3F3000ADDB0 = {
 			isa = PBXGroup;
 			children = (
 				80C1B1942460C3F3000ADDB0 /* Top Five */,
 				80C1B1932460C3F3000ADDB0 /* Products */,
+				0FFEA34A64460E010331B85B /* Pods */,
+				6F74D3393E6DEF01BF7CE548 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +92,34 @@
 			children = (
 				80C1B1952460C3F3000ADDB0 /* AppDelegate.swift */,
 				80C1B1972460C3F3000ADDB0 /* SceneDelegate.swift */,
-				80C1B1992460C3F3000ADDB0 /* ViewController.swift */,
+				80C1B1992460C3F3000ADDB0 /* OverviewViewController.swift */,
+				80C1B1B52460F619000ADDB0 /* OverviewCell.swift */,
+				80C1B1B62460F619000ADDB0 /* OverviewCell.xib */,
 				80C1B19B2460C3F3000ADDB0 /* Main.storyboard */,
-				80C1B19E2460C3F8000ADDB0 /* Assets.xcassets */,
+				80EB28472461DA3F006E54BD /* Data */,
 				80C1B1A02460C3F8000ADDB0 /* LaunchScreen.storyboard */,
 				80C1B1A32460C3F8000ADDB0 /* Info.plist */,
+				80C1B19E2460C3F8000ADDB0 /* Assets.xcassets */,
+				80EB284A2461EDA3006E54BD /* Font */,
 			);
 			path = "Top Five";
+			sourceTree = "<group>";
+		};
+		80EB28472461DA3F006E54BD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				80EB28432461DA1C006E54BD /* TopFiveList.swift */,
+				80EB28452461DA37006E54BD /* ListItems.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		80EB284A2461EDA3006E54BD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				80EB28482461ED9E006E54BD /* Righteous-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80C1B1A62460C3F8000ADDB0 /* Build configuration list for PBXNativeTarget "Top Five" */;
 			buildPhases = (
+				13592A11A858299FA8BAA904 /* [CP] Check Pods Manifest.lock */,
 				80C1B18E2460C3F3000ADDB0 /* Sources */,
 				80C1B18F2460C3F3000ADDB0 /* Frameworks */,
 				80C1B1902460C3F3000ADDB0 /* Resources */,
+				F1FFBFB3D82D1EE938D63E95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,7 +182,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C1B1B82460F619000ADDB0 /* OverviewCell.xib in Resources */,
 				80C1B1A22460C3F8000ADDB0 /* LaunchScreen.storyboard in Resources */,
+				80EB28492461ED9E006E54BD /* Righteous-Regular.ttf in Resources */,
 				80C1B19F2460C3F8000ADDB0 /* Assets.xcassets in Resources */,
 				80C1B19D2460C3F3000ADDB0 /* Main.storyboard in Resources */,
 			);
@@ -133,12 +192,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13592A11A858299FA8BAA904 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Top Five-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1FFBFB3D82D1EE938D63E95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Top Five/Pods-Top Five-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Top Five/Pods-Top Five-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Top Five/Pods-Top Five-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		80C1B18E2460C3F3000ADDB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C1B19A2460C3F3000ADDB0 /* ViewController.swift in Sources */,
+				80EB28462461DA37006E54BD /* ListItems.swift in Sources */,
+				80C1B1B72460F619000ADDB0 /* OverviewCell.swift in Sources */,
+				80EB28442461DA1C006E54BD /* TopFiveList.swift in Sources */,
+				80C1B19A2460C3F3000ADDB0 /* OverviewViewController.swift in Sources */,
 				80C1B1962460C3F3000ADDB0 /* AppDelegate.swift in Sources */,
 				80C1B1982460C3F3000ADDB0 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,10 +386,12 @@
 		};
 		80C1B1A72460C3F8000ADDB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D27AA8D67FB3965ABFA161C /* Pods-Top Five.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Top Five/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,10 +405,12 @@
 		};
 		80C1B1A82460C3F8000ADDB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56F3DA81DE6A55C2A0B0AF41 /* Pods-Top Five.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Top Five/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
