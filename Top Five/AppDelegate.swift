@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = UIColor(named: "Custom_Red")
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Righteous-Regular", size: 26)!]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Righteous-Regular", size: 24)!]
 
             UINavigationBar.appearance().tintColor = .white
             UINavigationBar.appearance().standardAppearance = appearance

@@ -106,6 +106,28 @@ class OverviewViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //MARK: - TABLEVIEW DELEGATE METHODS
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goToItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as! ItemsViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let title = topFiveListTitles?[indexPath.row].listTitle.uppercased()
+            destinationVC.navigationItem.title = title
+   
+        }
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+        
+        
+    }
+    
 
 
 }
