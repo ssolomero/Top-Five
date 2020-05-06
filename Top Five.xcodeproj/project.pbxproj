@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C96F628D399DF1C7CD25E43 /* Pods_Top_Five.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783E0E7009AA91F8F4568B11 /* Pods_Top_Five.framework */; };
+		80362941246321610092C387 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036293F246321610092C387 /* ListItemCell.swift */; };
+		80362942246321610092C387 /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80362940246321610092C387 /* ListItemCell.xib */; };
 		80B907B92462331E003950F3 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B907B82462331E003950F3 /* ItemsViewController.swift */; };
 		80C1B1962460C3F3000ADDB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1952460C3F3000ADDB0 /* AppDelegate.swift */; };
 		80C1B1982460C3F3000ADDB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1972460C3F3000ADDB0 /* SceneDelegate.swift */; };
@@ -18,7 +20,7 @@
 		80C1B1B72460F619000ADDB0 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1B1B52460F619000ADDB0 /* OverviewCell.swift */; };
 		80C1B1B82460F619000ADDB0 /* OverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C1B1B62460F619000ADDB0 /* OverviewCell.xib */; };
 		80EB28442461DA1C006E54BD /* TopFiveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB28432461DA1C006E54BD /* TopFiveList.swift */; };
-		80EB28462461DA37006E54BD /* ListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB28452461DA37006E54BD /* ListItems.swift */; };
+		80EB28462461DA37006E54BD /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB28452461DA37006E54BD /* ListItem.swift */; };
 		80EB28492461ED9E006E54BD /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80EB28482461ED9E006E54BD /* Righteous-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		56F3DA81DE6A55C2A0B0AF41 /* Pods-Top Five.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top Five.release.xcconfig"; path = "Target Support Files/Pods-Top Five/Pods-Top Five.release.xcconfig"; sourceTree = "<group>"; };
 		5D27AA8D67FB3965ABFA161C /* Pods-Top Five.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top Five.debug.xcconfig"; path = "Target Support Files/Pods-Top Five/Pods-Top Five.debug.xcconfig"; sourceTree = "<group>"; };
 		783E0E7009AA91F8F4568B11 /* Pods_Top_Five.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Top_Five.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8036293F246321610092C387 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		80362940246321610092C387 /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
 		80B907B82462331E003950F3 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		80C1B1922460C3F3000ADDB0 /* Top Five.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Five.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C1B1952460C3F3000ADDB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +42,7 @@
 		80C1B1B52460F619000ADDB0 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
 		80C1B1B62460F619000ADDB0 /* OverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCell.xib; sourceTree = "<group>"; };
 		80EB28432461DA1C006E54BD /* TopFiveList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFiveList.swift; sourceTree = "<group>"; };
-		80EB28452461DA37006E54BD /* ListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItems.swift; sourceTree = "<group>"; };
+		80EB28452461DA37006E54BD /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		80EB28482461ED9E006E54BD /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +80,8 @@
 			children = (
 				80C1B1B52460F619000ADDB0 /* OverviewCell.swift */,
 				80C1B1B62460F619000ADDB0 /* OverviewCell.xib */,
+				8036293F246321610092C387 /* ListItemCell.swift */,
+				80362940246321610092C387 /* ListItemCell.xib */,
 				80C1B19B2460C3F3000ADDB0 /* Main.storyboard */,
 			);
 			name = View;
@@ -130,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				80EB28432461DA1C006E54BD /* TopFiveList.swift */,
-				80EB28452461DA37006E54BD /* ListItems.swift */,
+				80EB28452461DA37006E54BD /* ListItem.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			files = (
 				80C1B1B82460F619000ADDB0 /* OverviewCell.xib in Resources */,
 				80C1B1A22460C3F8000ADDB0 /* LaunchScreen.storyboard in Resources */,
+				80362942246321610092C387 /* ListItemCell.xib in Resources */,
 				80EB28492461ED9E006E54BD /* Righteous-Regular.ttf in Resources */,
 				80C1B19F2460C3F8000ADDB0 /* Assets.xcassets in Resources */,
 				80C1B19D2460C3F3000ADDB0 /* Main.storyboard in Resources */,
@@ -260,7 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80EB28462461DA37006E54BD /* ListItems.swift in Sources */,
+				80362941246321610092C387 /* ListItemCell.swift in Sources */,
+				80EB28462461DA37006E54BD /* ListItem.swift in Sources */,
 				80C1B1B72460F619000ADDB0 /* OverviewCell.swift in Sources */,
 				80EB28442461DA1C006E54BD /* TopFiveList.swift in Sources */,
 				80C1B19A2460C3F3000ADDB0 /* OverviewViewController.swift in Sources */,

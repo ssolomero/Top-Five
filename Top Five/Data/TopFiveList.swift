@@ -12,4 +12,5 @@ import RealmSwift
 class TopFiveList: Object {
     
     @objc dynamic var listTitle: String = ""
+    let items = List<ListItem> ()
 }

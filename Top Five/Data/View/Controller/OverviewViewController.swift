@@ -28,9 +28,9 @@ class OverviewViewController: UITableViewController {
         
         loadLists()
         
-        self.tableView.register(UINib(nibName: "OverviewCell", bundle: nil), forCellReuseIdentifier: "Overview Cell")
+        self.tableView.register(UINib(nibName: "OverviewCell", bundle: nil), forCellReuseIdentifier: "OverviewCell")
         
-        self.tableView.rowHeight = 100.0
+        self.tableView.rowHeight = 90
         
         searchBar.delegate = self
         
@@ -46,7 +46,7 @@ class OverviewViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Overview Cell", for: indexPath) as! OverviewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OverviewCell", for: indexPath) as! OverviewCell
         
         cell.listLabel.text = topFiveListTitles?[indexPath.row].listTitle ?? "No list yet"
         

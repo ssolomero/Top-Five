@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell alpha="0.94999999999999996" contentMode="center" selectionStyle="default" indentationWidth="10" reuseIdentifier="Overview Cell" rowHeight="69" id="KGk-i7-Jjw" customClass="OverviewCell" customModule="Top_Five" customModuleProvider="target">
+        <tableViewCell alpha="0.94999999999999996" contentMode="center" selectionStyle="default" indentationWidth="10" reuseIdentifier="OverviewCell" rowHeight="69" id="KGk-i7-Jjw" customClass="OverviewCell" customModule="Top_Five" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
