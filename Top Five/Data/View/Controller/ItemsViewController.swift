@@ -15,19 +15,22 @@ class ItemsViewController: UITableViewController {
 
     private let realm = try! Realm()
     
-    var selectedList: TopFiveList?
+    var selectedList: TopFiveList? {
+        didSet {
+            loadItems()
+        }
+    }
     
+    //Tracks number (1. - 5.) the user selected
     private var itemNumber: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+   
+        //Register ListItem Cell
         self.tableView.register(UINib(nibName: "ListItemCell", bundle: nil), forCellReuseIdentifier: "ListItemCell")
         
         tableView.rowHeight = 70
-        
-        
         
     }
     
@@ -41,7 +44,6 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath) as! ListItemCell
         
         cell.textField.delegate = self
@@ -50,37 +52,60 @@ class ItemsViewController: UITableViewController {
         let listName = selectedList?.listTitle
         cell.numberLabel.text = "\(rowNumber)."
         cell.textField.placeholder = "The #\(rowNumber) \(listName ?? "spot")"
-    
-        //cell.listLabel.text = topFiveListTitles?[indexPath.row].listTitle ?? "No list yet"
         
-        //cell.listName.text = listArray[indexPath.row]
+        //Retreive item name from realm database and add to view
+        let count: Int = listItems?.count ?? 0
+        if count > 0 {
+            for place in 0...count - 1 {
+                if listItems?[place].rank == indexPath.row {
+                    cell.textField.text = listItems?[place].itemName
+                    break
+                }
+            }
+        }
         
         return cell
         
     }
     
-    //When item is selected
+  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! ListItemCell
         cell.textField.isUserInteractionEnabled = true
         cell.textField.becomeFirstResponder()
         itemNumber = indexPath.row
-        print(itemNumber)
     }
     
-    
-    func saveItems(item: ListItem) {
-        do {
-            try realm.write {
-                realm.add(item)
-            }
-        } catch {
-            print("Error saving context \(error)")
-        }
+    func loadItems() {
         
-        //tableView.reloadData()
+        listItems = selectedList?.items.sorted(byKeyPath: "rank", ascending: true)
+        tableView.reloadData()
     }
+    
+    
+    func updateData(_ textField: UITextField) {
+        
+        if let currentList = self.selectedList {
+            do {
+                try self.realm.write {
+                    if textField.text != "" {
+                        //Delete any items that has the same rank
+                        let prevItem = realm.objects(ListItem.self).filter("rank == %@", itemNumber)
+                        realm.delete(prevItem)
+                        //Add new item
+                        let newItem = ListItem()
+                        newItem.itemName = textField.text!
+                        newItem.rank = itemNumber
+                        currentList.items.append(newItem)
+                    }
+                }
+            } catch {
+                print("Error saving context \(error)")
+            }
+        }
+    }
+    
     
 }
 
@@ -95,20 +120,7 @@ extension ItemsViewController: UITextFieldDelegate {
     //Save text input
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if let currentList = self.selectedList {
-            do {
-                try self.realm.write {
-                    if textField.text != "" {
-                        let newItem = ListItem()
-                        newItem.itemName = textField.text!
-                        newItem.rank = itemNumber + 1
-                        currentList.items.append(newItem)
-                    }
-                }
-            } catch {
-                print("Error saving context \(error)")
-            }
-        }
+        updateData(textField)
     }
 
 }
