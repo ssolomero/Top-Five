@@ -10,8 +10,8 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 
-class OverviewViewController: UITableViewController {
-    
+class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate {
+
     let realm = try! Realm()
     
     //let listArray = ["Brunch Resturaunts", "NBA Players", "Movies of 2020"]
@@ -49,9 +49,9 @@ class OverviewViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "OverviewCell", for: indexPath) as! OverviewCell
         
-        cell.listLabel.text = topFiveListTitles?[indexPath.row].listTitle ?? "No list yet"
+        cell.delegate = self
         
-        //cell.listName.text = listArray[indexPath.row]
+        cell.listLabel.text = topFiveListTitles?[indexPath.row].listTitle ?? "No list yet"
         
         return cell
         
@@ -127,6 +127,35 @@ class OverviewViewController: UITableViewController {
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
 
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+            
+            self.updateModel(at: indexPath)
+            tableView.reloadData()
+            
+        }
+
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete_icon")
+
+        return [deleteAction]
+    }
+    func updateModel(at indexPath: IndexPath) {
+        if let list = self.topFiveListTitles?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(list)
+                }
+            } catch {
+                print("Error saving done status, \(error)")
+            }
+        }
     }
 
 
