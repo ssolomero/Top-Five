@@ -91,7 +91,7 @@ class ItemsViewController: UITableViewController {
                 try self.realm.write {
                     if textField.text != "" {
                         //Delete any items that has the same rank
-                        let prevItem = realm.objects(ListItem.self).filter("rank == %@", itemNumber)
+                        let prevItem = currentList.items.filter("rank == %@", itemNumber)
                         realm.delete(prevItem)
                         //Add new item
                         let newItem = ListItem()
