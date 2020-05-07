@@ -10,7 +10,9 @@ import Foundation
 import RealmSwift
 
 class ListItem: Object {
+    
     @objc dynamic var itemName: String = ""
+    @objc dynamic var rank: Int = 0
     
     var parentList = LinkingObjects(fromType: TopFiveList.self, property: "items")
 }

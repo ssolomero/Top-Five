@@ -119,15 +119,14 @@ class OverviewViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             let title = topFiveListTitles?[indexPath.row].listTitle.uppercased()
             destinationVC.navigationItem.title = title
+            destinationVC.selectedList = topFiveListTitles?[indexPath.row]
    
         }
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
-        
-        
+
     }
-    
 
 
 }
