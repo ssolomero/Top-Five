@@ -21,13 +21,12 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    //Tracks number (1. - 5.) the user selected
-    private var itemNumber: Int = 0
-    
+   
+    private var itemNumber: Int = 0 //Tracks number (1. - 5.) the user selected
+
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        //Register ListItem Cell
         self.tableView.register(UINib(nibName: "ListItemCell", bundle: nil), forCellReuseIdentifier: "ListItemCell")
         
         tableView.rowHeight = 70
@@ -49,9 +48,17 @@ class ItemsViewController: UITableViewController {
         cell.textField.delegate = self
         
         let rowNumber = indexPath.row + 1
-        let listName = selectedList?.listTitle
         cell.numberLabel.text = "\(rowNumber)."
-        cell.textField.placeholder = "The #\(rowNumber) \(listName ?? "spot")"
+        switch rowNumber {
+            
+        case 1: cell.textField.placeholder = "First Place"
+        case 2: cell.textField.placeholder = "First Place Loser"
+        case 3: cell.textField.placeholder = "Bronze"
+        case 4: cell.textField.placeholder = "So-so"
+        case 5: cell.textField.placeholder = "Last but not least"
+        default: cell.textField.placeholder = "The number \(rowNumber) spot"
+        
+        }
         
         //Retreive item name from realm database and add to view
         let count: Int = listItems?.count ?? 0
@@ -65,10 +72,10 @@ class ItemsViewController: UITableViewController {
         }
         
         return cell
-        
     }
     
-  
+    //MARK: - DATA MANIPULATION METHODS
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! ListItemCell
@@ -82,7 +89,6 @@ class ItemsViewController: UITableViewController {
         listItems = selectedList?.items.sorted(byKeyPath: "rank", ascending: true)
         tableView.reloadData()
     }
-    
     
     func updateData(_ textField: UITextField) {
         
@@ -108,6 +114,8 @@ class ItemsViewController: UITableViewController {
     
     
 }
+
+//MARK: - TEXT FIELD DELEGATE
 
 extension ItemsViewController: UITextFieldDelegate {
     

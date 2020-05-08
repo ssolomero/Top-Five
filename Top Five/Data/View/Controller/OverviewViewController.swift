@@ -14,20 +14,19 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
 
     let realm = try! Realm()
     
-    //let listArray = ["Brunch Resturaunts", "NBA Players", "Movies of 2020"]
-    //var topFiveListTitles = [TopFiveList]
     var topFiveListTitles: Results<TopFiveList>?
 
-    //@IBOutlet var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // Register Overview Cell
-        
         loadLists()
+        
+        if topFiveListTitles?.count == 0 {
+            searchBar.placeholder = "Add a Top 5 List"
+        }
         
         self.tableView.register(UINib(nibName: "OverviewCell", bundle: nil), forCellReuseIdentifier: "OverviewCell")
         
@@ -46,15 +45,17 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "OverviewCell", for: indexPath) as! OverviewCell
+        
+        if let list = topFiveListTitles?[indexPath.row] {
+            cell.listLabel?.text = list.listTitle
+        } else {
+            cell.textLabel?.text = "No List Yet"
+        }
         
         cell.delegate = self
         
-        cell.listLabel.text = topFiveListTitles?[indexPath.row].listTitle ?? "No list yet"
-        
         return cell
-        
     }
     
     //MARK: - DATA MANIPULATION METHODS
@@ -107,7 +108,7 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
         present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - TABLEVIEW DELEGATE METHODS
+    //MARK: - Go TO ITEM LIST PAGE
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -121,13 +122,13 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
             let title = topFiveListTitles?[indexPath.row].listTitle.uppercased()
             destinationVC.navigationItem.title = title
             destinationVC.selectedList = topFiveListTitles?[indexPath.row]
-   
         }
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
-
     }
+    
+    //MARK: - SWIPE TO DELETE
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
@@ -136,7 +137,7 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
             
-            self.updateModel(at: indexPath)
+            self.deleteList(at: indexPath)
             tableView.reloadData()
             
         }
@@ -146,7 +147,8 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
 
         return [deleteAction]
     }
-    func updateModel(at indexPath: IndexPath) {
+    
+    func deleteList(at indexPath: IndexPath) {
         if let list = self.topFiveListTitles?[indexPath.row] {
             do {
                 try self.realm.write {
@@ -157,7 +159,6 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
             }
         }
     }
-
 
 }
 

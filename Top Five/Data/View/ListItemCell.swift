@@ -16,8 +16,7 @@ class ListItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        //self.textField.delegate = self
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,11 +24,5 @@ class ListItemCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-//    //Exit keyboard and text field when Done(return) key is pressed
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//            self.endEditing(true)
-//            return false
-//    }
 
 }
