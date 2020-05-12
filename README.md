@@ -17,5 +17,7 @@ Search bar to search through lists
 
 # In the future
 Improve UX by sending the user to the detail screen when a new list is created
+
 Options to add description/photos to a list item 
+
 Implement user accounts so users can view other users' lists 
