@@ -14,3 +14,8 @@ Custom table view cells
 Search bar to search through lists
 
 ![topfive_screenshots](https://user-images.githubusercontent.com/28903218/81721066-46d55480-944d-11ea-87f9-7a01e0753bf3.png)
+
+# In the future
+Improve UX by sending the user to the detail screen when a new list is created
+Options to add description/photos to a list item 
+Implement user accounts so users can view other users' lists 
