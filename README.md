@@ -5,4 +5,11 @@ i0S 13 & Swift 5 -- Have you ever been asked what's your favorite movies/music a
 The app is very similar to a typical notes application. You have your overview screen with all your Top Five lists, and the detail screen has a prest list of 1. - 5. ready to fill out. 
 
 # Features Implemented 
-Realm Swift
+Realm Database
+
+Swipe Cell Kit to delete a list 
+
+Custom table view cells 
+
+Search bar to search through lists
+
