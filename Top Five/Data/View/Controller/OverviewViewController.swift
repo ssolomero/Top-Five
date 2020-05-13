@@ -90,12 +90,13 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
         
         let action = UIAlertAction(title: "Create", style: .default) { (action) in
             if textInput.text != "" {
-                print("Item Added")
                 
                 let newList = TopFiveList()
                 newList.listTitle = textInput.text!
-                
                 self.saveItems(title: newList)
+                
+                // Go to items page
+                self.performSegue(withIdentifier: "goToItems", sender: self)
             }
         }
         
@@ -118,11 +119,19 @@ class OverviewViewController: UITableViewController, SwipeTableViewCellDelegate 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let destinationVC = segue.destination as! ItemsViewController
+        
+        //When user selects a list, else when a new list is created
         if let indexPath = tableView.indexPathForSelectedRow {
             let title = topFiveListTitles?[indexPath.row].listTitle.uppercased()
             destinationVC.navigationItem.title = title
             destinationVC.selectedList = topFiveListTitles?[indexPath.row]
+        } else { 
+            let title = topFiveListTitles?.last!.listTitle.uppercased()
+            destinationVC.navigationItem.title = title
+            destinationVC.selectedList = topFiveListTitles?.last!
         }
+        
+        
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
